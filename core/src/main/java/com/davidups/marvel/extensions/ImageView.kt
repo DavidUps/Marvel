@@ -28,12 +28,11 @@ fun ImageView.loadFromUrlCircle(url: String) =
         .transition(DrawableTransitionOptions.withCrossFade())
         .into(this)
 
-
 fun ImageView.loadFromDrawable(drawable: Int) {
 
     Glide.with(this.context.applicationContext)
         .load(drawable)
-        //.apply(options)
+        // .apply(options)
         .transition(DrawableTransitionOptions.withCrossFade())
         .listener(object : RequestListener<Drawable> {
             override fun onLoadFailed(
@@ -63,7 +62,7 @@ fun ImageView.loadFromDrawable(drawable: Int, requestListener: RequestListener<D
 
     Glide.with(this.context.applicationContext)
         .load(drawable)
-        //.apply(options)
+        // .apply(options)
         .transition(DrawableTransitionOptions.withCrossFade())
         .listener(requestListener)
         .into(this)
@@ -73,7 +72,7 @@ fun ImageView.loadFromBitmap(bitmap: Bitmap) {
 
     Glide.with(this.context.applicationContext)
         .load(bitmap)
-        //.apply(options)
+        // .apply(options)
         .transition(DrawableTransitionOptions.withCrossFade())
         .into(this)
 }

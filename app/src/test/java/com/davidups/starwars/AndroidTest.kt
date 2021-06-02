@@ -2,7 +2,7 @@ package com.davidups.starwars
 
 import android.app.Application
 import android.content.Context
-import com.davidups.marvel.platform.BaseActivity
+import com.davidups.marvel.core.platform.BaseActivity
 import org.junit.Rule
 import org.junit.runner.RunWith
 import org.mockito.Mockito.mock
@@ -12,7 +12,7 @@ import org.robolectric.annotation.Config
 
 @RunWith(RobolectricTestRunner::class)
 @Config(
-    manifest=Config.NONE,
+    manifest = Config.NONE,
     application = AndroidTest.ApplicationStub::class,
     sdk = [21]
 )

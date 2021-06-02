@@ -5,7 +5,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.LayoutRes
 
-
 fun View.isVisible() = this.visibility == View.VISIBLE
 
 fun View.visible() {

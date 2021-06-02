@@ -1,4 +1,5 @@
-package com.davidups.starwars.core.platform.viewBinding
+package com.davidups.marvel.core.platform.viewBinding
+
 import android.view.View
 import androidx.annotation.RestrictTo
 import androidx.viewbinding.ViewBinding

@@ -12,4 +12,4 @@ class Error(
 ) : State<Nothing>()
 
 fun error() = Error(Failure.ServerError(Int.empty()))
-fun error(code:Int) = Error(Failure.ServerError(code))
+fun error(code: Int) = Error(Failure.ServerError(code))

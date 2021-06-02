@@ -9,8 +9,7 @@ import org.koin.dsl.module
 val sharedModule = module {
     single<SharedPreferences> {
         androidContext().getSharedPreferences(
-            BuildConfig.APPLICATION_ID + "-" + BuildConfig.ENVIRONMENT,
-            Context.MODE_PRIVATE
+            BuildConfig.DATA_BASE, Context.MODE_PRIVATE
         )
     }
 }

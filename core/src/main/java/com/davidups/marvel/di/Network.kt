@@ -3,7 +3,6 @@ package com.davidups.marvel.di
 import com.davidups.marvel.BuildConfig
 import com.davidups.marvel.platform.ContextHandler
 import com.davidups.marvel.platform.NetworkHandler
-import kotlinx.coroutines.Dispatchers
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.dsl.module

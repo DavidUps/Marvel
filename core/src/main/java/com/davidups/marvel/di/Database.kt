@@ -5,7 +5,6 @@ import com.davidups.marvel.BuildConfig
 import com.davidups.marvel.database.AppDatabase
 import org.koin.dsl.module
 
-
 val databaseModule = module {
     single {
         Room.databaseBuilder(
@@ -17,5 +16,4 @@ val databaseModule = module {
     }
 
 //    factory { PeopleLocal(get()) }
-
 }

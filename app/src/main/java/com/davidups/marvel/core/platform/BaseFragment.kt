@@ -1,4 +1,4 @@
-package com.davidups.marvel.platform
+package com.davidups.marvel.core.platform
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,9 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
-import com.davidups.marvel.extensions.navOptions
 import com.davidups.marvel.core.navigation.MainActivity
-import kotlinx.android.synthetic.main.navigation_activity.*
+import kotlinx.android.synthetic.main.navigation_activity.progress
 
 abstract class BaseFragment(layout: Int) : Fragment() {
 
@@ -40,11 +39,11 @@ abstract class BaseFragment(layout: Int) : Fragment() {
     }
 
     internal fun navigate(action: Int) {
-        requireView().findNavController().navigate(action, null, navOptions())
+        requireView().findNavController().navigate(action, null)
     }
 
     internal fun navigate(action: Int, bundle: Bundle) {
-        requireView().findNavController().navigate(action, bundle, navOptions())
+        requireView().findNavController().navigate(action, bundle)
     }
 
     internal fun navigateUp() {
@@ -52,7 +51,6 @@ abstract class BaseFragment(layout: Int) : Fragment() {
     }
 
     internal fun showCommonError() {
-
     }
 
     internal open fun handleShowSpinner(show: Boolean?) {

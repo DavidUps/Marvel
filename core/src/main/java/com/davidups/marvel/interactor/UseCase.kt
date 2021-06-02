@@ -7,7 +7,7 @@ abstract class UseCase <out Type, in Params> where Type : Any? {
     @JvmOverloads
     operator fun invoke(
         params: Params? = null
-    ):Flow<Type>{
+    ): Flow<Type> {
         return run(params)
     }
 
