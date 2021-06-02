@@ -1,4 +1,4 @@
-package com.davidups.marvel.core.platform.viewBinding
+package com.davidups.marvel.marvel.core.platform.viewBinding
 
 import android.os.Handler
 import android.os.Looper
@@ -9,9 +9,11 @@ import androidx.annotation.MainThread
 import androidx.lifecycle.DefaultLifecycleObserver
 import androidx.lifecycle.LifecycleOwner
 import androidx.viewbinding.ViewBinding
+import com.davidups.marvel.core.platform.viewBinding.ViewBinder
 import com.davidups.marvel.core.platform.viewBinding.internal.DefaultViewBinder
 import com.davidups.marvel.core.platform.viewBinding.internal.checkIsMainThread
 import com.davidups.marvel.core.platform.viewBinding.internal.requireViewByIdCompat
+import com.davidups.marvel.core.platform.viewBinding.viewBinder
 import kotlin.properties.ReadOnlyProperty
 import kotlin.reflect.KProperty
 

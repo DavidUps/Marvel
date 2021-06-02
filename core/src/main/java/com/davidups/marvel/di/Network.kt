@@ -1,6 +1,6 @@
 package com.davidups.marvel.di
 
-import com.davidups.marvel.BuildConfig
+import com.davidups.marvel.marvel.BuildConfig
 import com.davidups.marvel.platform.ContextHandler
 import com.davidups.marvel.platform.NetworkHandler
 import okhttp3.OkHttpClient

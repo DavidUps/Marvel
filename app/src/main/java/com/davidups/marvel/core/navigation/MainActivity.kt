@@ -8,8 +8,8 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
-import com.davidups.marvel.R
-import com.davidups.marvel.databinding.NavigationActivityBinding
+import com.davidups.marvel.marvel.R
+import com.davidups.marvel.marvel.databinding.NavigationActivityBinding
 import kotlinx.android.synthetic.main.navigation_activity.toolbar
 
 class MainActivity : AppCompatActivity() {

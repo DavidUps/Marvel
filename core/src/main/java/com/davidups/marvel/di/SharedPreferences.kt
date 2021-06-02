@@ -2,7 +2,7 @@ package com.davidups.marvel.di
 
 import android.content.Context
 import android.content.SharedPreferences
-import com.davidups.marvel.BuildConfig
+import com.davidups.marvel.marvel.BuildConfig
 import org.koin.android.ext.koin.androidContext
 import org.koin.dsl.module
 
