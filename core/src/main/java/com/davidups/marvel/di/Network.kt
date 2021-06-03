@@ -1,7 +1,6 @@
 package com.davidups.marvel.di
 
 import com.davidups.marvel.marvel.BuildConfig
-import com.davidups.marvel.platform.ContextHandler
 import com.davidups.marvel.platform.NetworkHandler
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -9,24 +8,21 @@ import org.koin.dsl.module
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
+
 val networkModule = module {
+    factory { NetworkHandler(get()) }
+    single {
+        Retrofit.Builder()
+            .baseUrl(BuildConfig.ENVIRONMENT_URL)
+            .client(createClient())
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+    }
 
-    val networkModule = module {
-        factory { ContextHandler(get()) }
-        factory { NetworkHandler(get()) }
-        single {
-            Retrofit.Builder()
-                .baseUrl(BuildConfig.ENVIRONMENT_URL)
-                .client(createClient())
-                .addConverterFactory(GsonConverterFactory.create())
-                .build()
-        }
-
-        single {
-            Retrofit.Builder()
-                .client(createClient())
-                .addConverterFactory(GsonConverterFactory.create())
-        }
+    single {
+        Retrofit.Builder()
+            .client(createClient())
+            .addConverterFactory(GsonConverterFactory.create())
     }
 }
 
