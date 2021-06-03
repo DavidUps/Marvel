@@ -2,19 +2,17 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.davidups.marvel.marvel">
-    <!--Permissions-->
-    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:name="com.davidups.marvel.marvel.com.davidups.marvel.AndroidApplication"
+        android:name="com.davidups.marvel.AndroidApplication"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/ic_launcher_foreground"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name="com.davidups.marvel.marvel.com.davidups.marvel.core.navigation.MainActivity">
+        <activity android:name="com.davidups.marvel.core.navigation.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

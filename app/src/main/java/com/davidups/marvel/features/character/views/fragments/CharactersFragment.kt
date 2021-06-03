@@ -1,14 +1,14 @@
-package com.davidups.marvel.features.characters.views.fragments
+package com.davidups.marvel.features.character.views.fragments
 
 import android.os.Bundle
 import com.davidups.marvel.marvel.R
 import com.davidups.marvel.core.platform.BaseFragment
 import com.davidups.marvel.core.platform.viewBinding.viewBinding
-import com.davidups.marvel.marvel.databinding.FragmentStartBinding
+import com.davidups.marvel.marvel.databinding.CharactersFragmentBinding
 
-class Fragment : BaseFragment(R.layout.fragment_start) {
+class CharactersFragment : BaseFragment(R.layout.characters_fragment) {
 
-    val binding by viewBinding(FragmentStartBinding::bind)
+    val binding by viewBinding(CharactersFragmentBinding::bind)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
