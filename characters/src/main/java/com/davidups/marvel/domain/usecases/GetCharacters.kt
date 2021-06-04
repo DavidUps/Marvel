@@ -6,8 +6,10 @@ import com.davidups.marvel.functional.State
 import com.davidups.marvel.interactor.UseCase
 
 class GetCharacters(private val repository: CharactersRepository) :
-    UseCase<State<CharactersView>, UseCase.None>() {
+    UseCase<State<CharactersView>, GetCharacters.Params>() {
 
-    override fun run(params: None?) = repository.getCharacters()
+    override fun run(params: Params?) = repository.getCharacters(params?.offset)
+
+    data class Params(val offset: Int?)
 
 }

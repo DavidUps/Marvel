@@ -40,18 +40,18 @@ android {
             dimension "enviroment"
             buildConfigField "String", "ENVIRONMENT", "\"PRE\""
             buildConfigField "String", "DATA_BASE", "\"PRE-MARVEL\""
-            buildConfigField "String", "BASE_URL", "https://gateway.marvel.com/v1/public/"
-            buildConfigField "String", "MARVEL_API_PUBLIC_KEY", apikeyProperties["PUBLIC_KEY"]
-            buildConfigField "String", "MARVEL_API_PRIVATE_KEY", apikeyProperties["PRIVATE_KEY"]
+            buildConfigField "String", "BASE_URL", "\"https://gateway.marvel.com/\""
+            buildConfigField "String", "PUBLIC_KEY", apikeyProperties["PUBLIC_KEY"]
+            buildConfigField "String", "PRIVATE_KEY", apikeyProperties["PRIVATE_KEY"]
         }
 
         Production {
             dimension "enviroment"
             buildConfigField "String", "ENVIRONMENT", "\"PRO\""
             buildConfigField "String", "DATA_BASE", "\"PRO-MARVEL\""
-            buildConfigField "String", "BASE_URL", "https://gateway.marvel.com/v1/public/"
-            buildConfigField "String", "MARVEL_API_PUBLIC_KEY", apikeyProperties["PUBLIC_KEY"]
-            buildConfigField "String", "MARVEL_API_PRIVATE_KEY", apikeyProperties["PRIVATE_KEY"]
+            buildConfigField "String", "BASE_URL", "\"https://gateway.marvel.com/\""
+            buildConfigField "String", "PUBLIC_KEY", apikeyProperties["PUBLIC_KEY"]
+            buildConfigField "String", "PRIVATE_KEY", apikeyProperties["PRIVATE_KEY"]
         }
     }
 }

@@ -9,7 +9,7 @@ data class Character(
     val id: Int?,
     val name: String?,
     val description: String?,
-    val modified: Date?,
+    val modified: String?,
     val resourceURI: String?
 ) {
 

@@ -22,22 +22,22 @@ class CharactersDataSourceImp(
     private val local: CharacterLocal
 ) : CharactersDataSource {
 
-    override fun getCharacters() = flow {
+    override fun getCharacters(offset: Int?) = flow {
         val local = local.getCharacters()
         if (local != null)
             emit(Success(local.toCharacters().toCharactersView()))
         else
-            emit(getCharactersFromService())
+            emit(getCharactersFromService(offset))
     }
         .catch { emit(Error(Failure.Throwable(it))) }
         .flowOn(Dispatchers.IO)
 
-    private suspend fun getCharactersFromService(): State<CharactersView> {
+    private suspend fun getCharactersFromService(offset: Int?): State<CharactersView> {
         return if (networkHandler.isConnected.orEmpty()) {
-            service.getCharacters().run {
+            service.getCharacters(10, offset).run {
                 if (isSuccessful && body() != null) {
                     val data =
-                        Gson().fromJson(body()!!.data.toString(), CharactersEntity::class.java)
+                        Gson().fromJson(Gson().toJson(body()!!.data), CharactersEntity::class.java)
                     local.putCharacters(data)
                     Success(data.toCharacters().toCharactersView())
                 } else {

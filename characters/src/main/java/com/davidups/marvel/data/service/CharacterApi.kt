@@ -4,6 +4,7 @@ import com.davidups.marvel.platform.BaseResponse
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Path
+import retrofit2.http.Query
 
 internal interface CharacterApi {
 
@@ -13,7 +14,7 @@ internal interface CharacterApi {
     }
 
     @GET(CHARACTERS)
-    suspend fun getCharacters(): Response<BaseResponse>
+    suspend fun getCharacters(@Query("limit") limit: Int? = 10, @Query("offset") offset: Int? = 0): Response<BaseResponse>
 
     @GET(CHARACTER)
     suspend fun getCharacter(@Path("characterId") id: String?): Response<BaseResponse>

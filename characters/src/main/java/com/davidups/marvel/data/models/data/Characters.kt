@@ -15,11 +15,11 @@ data class Characters(
     fun toCharactersEntity() =
         CharactersEntity(
             null,
-            offset,
-            limit,
-            total,
-            count,
-            results?.map { it.toCharacterEntity() }?.toMutableList()
+            offset?.toDouble(),
+            limit?.toDouble(),
+            total?.toDouble(),
+            count?.toDouble(),
+            arrayListOf()
         )
 
     fun toCharactersView() =

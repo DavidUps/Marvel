@@ -6,6 +6,7 @@ import com.davidups.marvel.data.models.view.CharactersView
 import com.davidups.marvel.domain.usecases.GetCharacters
 import com.davidups.marvel.exception.Failure
 import com.davidups.marvel.extensions.cancelIfActive
+import com.davidups.marvel.extensions.orEmpty
 import com.davidups.marvel.functional.Error
 import com.davidups.marvel.functional.Success
 import com.davidups.marvel.interactor.UseCase
@@ -29,7 +30,7 @@ class CharacterViewModel(
     fun getCharacters() {
         getCharactersJob.cancelIfActive()
         getCharactersJob = viewModelScope.launch {
-            getCharacters(UseCase.None())
+            getCharacters(GetCharacters.Params(calculateOffset()))
                 .onStart { handleShowSpinner(true) }
                 .onCompletion { handleShowSpinner(false) }
                 .catch { handleFailure(Failure.Throwable(it)) }
@@ -41,4 +42,7 @@ class CharacterViewModel(
                 }
         }
     }
+
+    private fun calculateOffset() = _characters.value?.offset?.let { it + 10 }.orEmpty()
+
 }
