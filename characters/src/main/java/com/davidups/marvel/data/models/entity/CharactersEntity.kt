@@ -11,10 +11,10 @@ import com.davidups.marvel.extensions.empty
 data class CharactersEntity(
     @PrimaryKey(autoGenerate = true)
     val id: Int?,
-    val offset: Double?,
-    val limit: Double?,
-    val total: Double?,
-    val count: Double?,
+    var offset: Int?,
+    val limit: Int?,
+    val total: Int?,
+    val count: Int?,
     @TypeConverters(CharacterConverter::class)
     var results: MutableList<CharacterEntity>?
 ) {
@@ -22,14 +22,15 @@ data class CharactersEntity(
         fun empty() =
             CharactersEntity(
                 Int.empty(),
-                Double.empty(),
-                Double.empty(),
-                Double.empty(),
-                Double.empty(),
+                Int.empty(),
+                Int.empty(),
+                Int.empty(),
+                Int.empty(),
                 mutableListOf()
             )
     }
 
     fun toCharacters() =
-        Characters(offset?.toInt(), limit?.toInt(), total?.toInt(), count?.toInt(), results?.map { it.toCharacter() }?.toMutableList())
+        Characters(offset,
+            limit, total, count, results?.map { it.toCharacter() }?.toMutableList())
 }

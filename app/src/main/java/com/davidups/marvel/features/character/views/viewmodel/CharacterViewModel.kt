@@ -9,7 +9,6 @@ import com.davidups.marvel.extensions.cancelIfActive
 import com.davidups.marvel.extensions.orEmpty
 import com.davidups.marvel.functional.Error
 import com.davidups.marvel.functional.Success
-import com.davidups.marvel.interactor.UseCase
 import com.davidups.marvel.platform.BaseViewModel
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.catch
@@ -27,10 +26,10 @@ class CharacterViewModel(
     private var _characters = MutableLiveData<CharactersView>()
     val characters get() = _characters
 
-    fun getCharacters() {
+    fun getCharacters(fromPagination: Boolean = false) {
         getCharactersJob.cancelIfActive()
         getCharactersJob = viewModelScope.launch {
-            getCharacters(GetCharacters.Params(calculateOffset()))
+            getCharacters(GetCharacters.Params(calculateOffset(), fromPagination))
                 .onStart { handleShowSpinner(true) }
                 .onCompletion { handleShowSpinner(false) }
                 .catch { handleFailure(Failure.Throwable(it)) }

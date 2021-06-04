@@ -6,6 +6,6 @@ class CharactersRepositoryImp(
     private val charactersDataSource: CharactersDataSource
 ) : CharactersRepository {
 
-    override fun getCharacters(offset: Int?) = charactersDataSource.getCharacters(offset)
+    override fun getCharacters(offset: Int?, fromPagination:Boolean) = charactersDataSource.getCharacters(offset, fromPagination)
 
 }

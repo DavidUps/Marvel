@@ -22,9 +22,9 @@ class CharactersDataSourceImp(
     private val local: CharacterLocal
 ) : CharactersDataSource {
 
-    override fun getCharacters(offset: Int?) = flow {
+    override fun getCharacters(offset: Int?, fromPagination:Boolean) = flow {
         val local = local.getCharacters()
-        if (local != null)
+        if (local != null && !fromPagination)
             emit(Success(local.toCharacters().toCharactersView()))
         else
             emit(getCharactersFromService(offset))
@@ -38,7 +38,7 @@ class CharactersDataSourceImp(
                 if (isSuccessful && body() != null) {
                     val data =
                         Gson().fromJson(Gson().toJson(body()!!.data), CharactersEntity::class.java)
-                    local.putCharacters(data)
+                    saveLocal(data)
                     Success(data.toCharacters().toCharactersView())
                 } else {
                     Error(Failure.ServerError(code()))
@@ -46,5 +46,16 @@ class CharactersDataSourceImp(
             }
         } else
             Error(Failure.NetworkConnection)
+    }
+
+    private fun saveLocal(characters: CharactersEntity) {
+        val localCache = local.getCharacters()
+        if (localCache != null) {
+            localCache.offset = localCache.offset?.plus(10)
+            localCache.results?.addAll(characters.results.orEmpty())
+            local.updateCharacters(localCache)
+        } else {
+            local.putCharacters(characters)
+        }
     }
 }

@@ -12,12 +12,21 @@ data class CharacterEntity(
     val name: String?,
     val description: String?,
     val modified: String?,
-    val resourceURI: String?
+    val resourceURI: String?,
+    val thumbnail: CharacterThumbnailEntity?
 ) {
     companion object {
         fun empty() =
-            CharacterEntity(Int.empty(), String.empty(), String.empty(), null, String.empty())
+            CharacterEntity(
+                Int.empty(),
+                String.empty(),
+                String.empty(),
+                null,
+                String.empty(),
+                CharacterThumbnailEntity.empty()
+            )
     }
 
-    fun toCharacter() = Character(id, name, description, modified, resourceURI)
+    fun toCharacter() =
+        Character(id, name, description, modified, resourceURI, thumbnail?.toCharacterThumbnail())
 }

@@ -9,6 +9,6 @@ import com.davidups.marvel.platform.BaseDao
 interface CharactersDAO : BaseDao<CharactersEntity> {
 
     @Query("SELECT * FROM CharactersEntity")
-    fun getCharacters(): CharactersEntity
+    fun getCharacters(): CharactersEntity?
 
 }

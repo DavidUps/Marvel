@@ -10,16 +10,18 @@ data class Character(
     val name: String?,
     val description: String?,
     val modified: String?,
-    val resourceURI: String?
+    val resourceURI: String?,
+    val characterImage: CharacterThumbnail?
 ) {
 
-    fun toCharacterEntity() = CharacterEntity(id, name, description, modified, resourceURI)
+    fun toCharacterEntity() = CharacterEntity(id, name, description, modified, resourceURI, characterImage?.toCharacterThumbnailEntity())
     fun toCharacterView() = CharacterView(
         id.orEmpty(),
         name.orEmpty(),
         description.orEmpty(),
         modified,
-        resourceURI.orEmpty()
+        resourceURI.orEmpty(),
+        characterImage?.image().orEmpty()
     )
 
 }
