@@ -25,4 +25,9 @@
         <item name="android:textColor">@color/gray</item>
     </style>
 
+    <style name="autoAdjustImageView">
+        <item name="android:adjustViewBounds">true</item>
+        <item name="android:scaleType">center</item>
+    </style>
+
 </resources>

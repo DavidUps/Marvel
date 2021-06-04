@@ -4,9 +4,13 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.navigation.NavDirections
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import com.davidups.marvel.core.navigation.MainActivity
+import com.davidups.marvel.exception.Failure
 import kotlinx.android.synthetic.main.navigation_activity.progress
 
 abstract class BaseFragment(layout: Int) : Fragment() {
@@ -38,22 +42,26 @@ abstract class BaseFragment(layout: Int) : Fragment() {
         }
     }
 
-    internal fun navigate(action: Int) {
-        requireView().findNavController().navigate(action, null)
-    }
-
-    internal fun navigate(action: Int, bundle: Bundle) {
-        requireView().findNavController().navigate(action, bundle)
+    internal fun navigate(action: NavDirections) {
+        findNavController().navigate(action)
     }
 
     internal fun navigateUp() {
-        requireView().findNavController().navigateUp()
-    }
-
-    internal fun showCommonError() {
+        findNavController().popBackStack()
     }
 
     internal open fun handleShowSpinner(show: Boolean?) {
         showSpinner(show ?: false)
+    }
+
+    internal open fun handleFailure(failure: Failure?) {
+        when (failure) {
+            is Failure.NetworkConnection -> toast("You seem to have no connection.")
+            else -> toast("Error displaying information")
+        }
+    }
+
+    fun toast(text: String) {
+        Toast.makeText(requireContext(), text, Toast.LENGTH_SHORT).show()
     }
 }

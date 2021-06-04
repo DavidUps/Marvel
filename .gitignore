@@ -1,3 +1,6 @@
+# Api keys
+apiKeys.properties
+
 # Built application files
 *.apk
 *.aar
@@ -76,6 +79,7 @@ fastlane/Preview.html
 fastlane/screenshots
 fastlane/test_output
 fastlane/readme.md
+vendor/
 
 # Version control
 vcs.xml

@@ -8,6 +8,7 @@
     <dimen name="text_size_18">18sp</dimen>
     <dimen name="text_size_16">16sp</dimen>
 
+    <dimen name="size_8">8dp</dimen>
     <dimen name="size_14">14dp</dimen>
     <dimen name="size_16">16dp</dimen>
     <dimen name="size_18">18dp</dimen>
@@ -41,7 +42,6 @@
     <!--profile-->
     <dimen name="profile_height">143dp</dimen>
     <dimen name="edit_profile_height">230dp</dimen>
-
 
 
 </resources>

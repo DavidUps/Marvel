@@ -6,7 +6,9 @@ import com.davidups.marvel.exception.Failure
 
 abstract class BaseViewModel : ViewModel() {
 
-    var failure: MutableLiveData<Failure> = MutableLiveData()
+    var _failure: MutableLiveData<Failure> = MutableLiveData()
+    val failure get() = _failure
+
     var showSpinner: MutableLiveData<Boolean> = MutableLiveData()
 
     protected fun handleFailure(failure: Failure?) {
