@@ -4,9 +4,9 @@ plugins {
     id 'kotlin-kapt'
 }
 
-def apikeysPropertiesFile = rootProject.file("apikeys.properties")
-def apikeysProperties = new Properties()
-apikeysProperties.load(new FileInputStream(apikeysPropertiesFile))
+def apikeyPropertiesFile = rootProject.file("apikeys.properties")
+def apikeyProperties = new Properties()
+apikeyProperties.load(new FileInputStream(apikeyPropertiesFile))
 
 android {
     compileSdkVersion 30
@@ -41,8 +41,8 @@ android {
             buildConfigField "String", "ENVIRONMENT", "\"PRE\""
             buildConfigField "String", "DATA_BASE", "\"PRE-MARVEL\""
             buildConfigField "String", "BASE_URL", "https://gateway.marvel.com/v1/public/"
-            buildConfigField "String", "MARVEL_API_PUBLIC_KEY", apikeysProperties["PUBLIC_KEY"]
-            buildConfigField "String", "MARVEL_API_PRIVATE_KEY", apikeysProperties["PRIVATE_KEY"]
+            buildConfigField "String", "MARVEL_API_PUBLIC_KEY", apikeyProperties["PUBLIC_KEY"]
+            buildConfigField "String", "MARVEL_API_PRIVATE_KEY", apikeyProperties["PRIVATE_KEY"]
         }
 
         Production {
@@ -50,8 +50,8 @@ android {
             buildConfigField "String", "ENVIRONMENT", "\"PRO\""
             buildConfigField "String", "DATA_BASE", "\"PRO-MARVEL\""
             buildConfigField "String", "BASE_URL", "https://gateway.marvel.com/v1/public/"
-            buildConfigField "String", "MARVEL_API_PUBLIC_KEY", apikeysProperties["PUBLIC_KEY"]
-            buildConfigField "String", "MARVEL_API_PRIVATE_KEY", apikeysProperties["PRIVATE_KEY"]
+            buildConfigField "String", "MARVEL_API_PUBLIC_KEY", apikeyProperties["PUBLIC_KEY"]
+            buildConfigField "String", "MARVEL_API_PRIVATE_KEY", apikeyProperties["PRIVATE_KEY"]
         }
     }
 }
