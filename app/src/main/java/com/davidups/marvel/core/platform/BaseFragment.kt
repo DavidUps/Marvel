@@ -42,12 +42,8 @@ abstract class BaseFragment(layout: Int) : Fragment() {
         }
     }
 
-    internal fun navigate(action: NavDirections) {
-        findNavController().navigate(action)
-    }
-
     internal fun navigateUp() {
-        findNavController().popBackStack()
+        findNavController().navigateUp()
     }
 
     internal open fun handleShowSpinner(show: Boolean?) {

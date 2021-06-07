@@ -56,8 +56,8 @@ dependencies {
     implementation project(':characters')
 
     //Navigation
-    implementation 'androidx.navigation:navigation-fragment-ktx:2.3.5'
-    implementation 'androidx.navigation:navigation-ui-ktx:2.1.0'
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.3.1'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.3.1'
 
     // See Database => [http://ip_mobile:8080]
     debugImplementation 'com.amitshekhar.android:debug-db:1.0.6'

@@ -10,12 +10,14 @@ import com.davidups.marvel.marvel.R
 import com.davidups.marvel.marvel.databinding.CharacterItemBinding
 import kotlin.properties.Delegates
 
+
 class CharactersAdapter : RecyclerView.Adapter<CharactersAdapter.EnvironmentHolder>() {
 
     internal var collection: List<CharacterView> by Delegates.observable(emptyList()) { _, _, _ ->
         notifyDataSetChanged()
     }
-    internal var characterListener: (CharacterView) -> Unit = {}
+    internal var characterListener: (CharacterView, View) -> Unit =
+        { _: CharacterView, _: View -> }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
         EnvironmentHolder(parent.inflate(R.layout.character_item))
@@ -30,11 +32,17 @@ class CharactersAdapter : RecyclerView.Adapter<CharactersAdapter.EnvironmentHold
 
         private val binding = CharacterItemBinding.bind(itemView)
 
-        fun bind(item: CharacterView, characterListener: (CharacterView) -> Unit) {
+        fun bind(item: CharacterView, characterListener: (CharacterView, View) -> Unit) {
+            binding.cvItem.transitionName = String.format(
+                itemView.context.getString(R.string.character_card_transition_name),
+                item.id
+            )
             binding.ivCharacter.loadFromUrl(item.image)
             binding.tvCharacterName.text = item.name
-            binding.cvItem.setOnClickListener { characterListener(item) }
-            binding.btnMoreInfo.setOnClickListener { characterListener(item) }
+            binding.cvItem.setOnClickListener {
+                characterListener(item, binding.cvItem)
+            }
+            binding.btnMoreInfo.setOnClickListener { characterListener(item, binding.cvItem) }
         }
     }
 }
