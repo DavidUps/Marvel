@@ -21,6 +21,10 @@
         <item name="android:textColor">@color/colorPrimary</item>
     </style>
 
+    <style name="character_desciption">
+        <item name="android:textColor">@color/colorAccent</item>
+    </style>
+
     <style name="title.text_gray">
         <item name="android:textColor">@color/gray</item>
     </style>

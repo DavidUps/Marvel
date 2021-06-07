@@ -1,6 +1,8 @@
 package com.davidups.marvel.core.navigation
 
+import android.animation.LayoutTransition
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.ActivityNavigator
 import androidx.navigation.NavController
@@ -34,6 +36,7 @@ class MainActivity : AppCompatActivity() {
         val navHostFragment =
             supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         navController = navHostFragment.navController
+        binding.container.layoutTransition.enableTransitionType(LayoutTransition.CHANGING)
     }
 
     private fun initListeners() {
@@ -41,6 +44,11 @@ class MainActivity : AppCompatActivity() {
             onBackPressed()
         }
 
-        navController.addOnDestinationChangedListener { _, destination, _ -> }
+        navController.addOnDestinationChangedListener { _, destination, _ ->
+            binding.toolbar.visibility = when (destination.id) {
+                R.id.characterFragment -> View.VISIBLE
+                else -> View.GONE
+            }
+        }
     }
 }
