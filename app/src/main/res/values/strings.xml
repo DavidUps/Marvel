@@ -6,4 +6,6 @@
     <string name="generic_error_title">Upsss!</string>
     <string name="generic_error_body">Parece que tenemos problemas, estamos trabajando para solucionarlo. Por favor, vuelve a intentarlo más tarde.</string>
     <string name="more_info">more info</string>
+    <string name="character_card_transition_name">character_card_%1$s</string>
+    <string name="character_card_detail_transition_name">character_card_detail</string>
 </resources>

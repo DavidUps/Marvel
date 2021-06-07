@@ -9,5 +9,20 @@
         android:id="@+id/charactersFragment"
         android:name="com.davidups.marvel.features.character.views.fragments.CharactersFragment"
         android:label="characters_fragment"
-        tools:layout="@layout/characters_fragment" />
+        tools:layout="@layout/characters_fragment">
+        <action
+            android:id="@+id/action_charactersFragment_to_characterFragment"
+            app:destination="@id/characterFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/characterFragment"
+        android:name="com.davidups.marvel.features.character.views.fragments.CharacterFragment"
+        android:label="character_fragment"
+        tools:layout="@layout/character_fragment">
+        <argument
+            android:name="character"
+            android:defaultValue="@null"
+            app:argType="com.davidups.marvel.data.models.view.CharacterView"
+            app:nullable="true" />
+    </fragment>
 </navigation>
