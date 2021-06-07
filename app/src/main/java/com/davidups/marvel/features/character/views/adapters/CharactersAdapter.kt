@@ -10,7 +10,6 @@ import com.davidups.marvel.marvel.R
 import com.davidups.marvel.marvel.databinding.CharacterItemBinding
 import kotlin.properties.Delegates
 
-
 class CharactersAdapter : RecyclerView.Adapter<CharactersAdapter.EnvironmentHolder>() {
 
     internal var collection: List<CharacterView> by Delegates.observable(emptyList()) { _, _, _ ->

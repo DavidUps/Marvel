@@ -16,7 +16,6 @@ import com.davidups.marvel.features.character.views.adapters.CharactersAdapter
 import com.davidups.marvel.features.character.views.viewmodel.CharacterViewModel
 import com.davidups.marvel.marvel.R
 import com.davidups.marvel.marvel.databinding.CharactersFragmentBinding
-import com.google.android.material.transition.MaterialContainerTransform
 import com.google.android.material.transition.MaterialElevationScale
 import com.google.android.material.transition.MaterialFadeThrough
 import org.koin.android.viewmodel.ext.android.viewModel
