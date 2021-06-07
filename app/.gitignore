@@ -1,6 +1,15 @@
-/build
-<<<<<<< HEAD
-/app.iml
-=======
+# Gradle
+.gradle
+build/
+
+captures
+
+/local.properties
+
+# IntelliJ .idea folder
+/.idea
 *.iml
->>>>>>> develop
+
+# General
+.DS_Store
+.externalNativeBuild

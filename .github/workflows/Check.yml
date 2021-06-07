@@ -25,6 +25,19 @@ jobs:
       - name: Build project
         run: ./gradlew spotlessCheck assembleDebug lintDebug --stacktrace
 
+      - name: Upload build outputs (APKs)
+        uses: actions/upload-artifact@v2
+        with:
+          name: build-outputs
+          path: app/build/outputs
+
+      - name: Upload build reports
+        if: always()
+        uses: actions/upload-artifact@v2
+        with:
+          name: build-reports
+          path: app/build/reports
+
   test:
     needs: build
     runs-on: macOS-latest # enables hardware acceleration in the virtual machine
