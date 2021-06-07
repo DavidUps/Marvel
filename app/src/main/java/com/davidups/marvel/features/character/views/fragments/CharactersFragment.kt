@@ -6,15 +6,15 @@ import androidx.core.view.doOnPreDraw
 import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
-import com.davidups.marvel.marvel.R
 import com.davidups.marvel.core.platform.BaseFragment
 import com.davidups.marvel.core.platform.viewBinding.viewBinding
 import com.davidups.marvel.data.models.view.CharactersView
 import com.davidups.marvel.extensions.endless
-import com.davidups.marvel.extensions.observe
 import com.davidups.marvel.extensions.failure
+import com.davidups.marvel.extensions.observe
 import com.davidups.marvel.features.character.views.adapters.CharactersAdapter
 import com.davidups.marvel.features.character.views.viewmodel.CharacterViewModel
+import com.davidups.marvel.marvel.R
 import com.davidups.marvel.marvel.databinding.CharactersFragmentBinding
 import com.google.android.material.transition.MaterialContainerTransform
 import com.google.android.material.transition.MaterialElevationScale

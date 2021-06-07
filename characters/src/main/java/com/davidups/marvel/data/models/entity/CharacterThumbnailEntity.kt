@@ -10,5 +10,4 @@ data class CharacterThumbnailEntity(val path: String?, val extension: String?, v
     }
 
     fun toCharacterThumbnail() = CharacterThumbnail(path, extension, image)
-
 }

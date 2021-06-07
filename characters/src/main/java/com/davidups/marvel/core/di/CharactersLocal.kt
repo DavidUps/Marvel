@@ -17,5 +17,4 @@ val characterLocalModule = module {
         )
             .build()
     }
-
 }

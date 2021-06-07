@@ -18,5 +18,4 @@ internal interface CharacterApi {
 
     @GET(CHARACTER)
     suspend fun getCharacter(@Path("characterId") id: String?): Response<BaseResponse>
-
 }

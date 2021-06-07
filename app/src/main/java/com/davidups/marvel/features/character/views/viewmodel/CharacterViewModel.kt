@@ -43,5 +43,4 @@ class CharacterViewModel(
     }
 
     private fun calculateOffset() = _characters.value?.offset?.let { it + 10 }.orEmpty()
-
 }

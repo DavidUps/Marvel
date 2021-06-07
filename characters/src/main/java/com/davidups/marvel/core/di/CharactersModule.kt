@@ -5,4 +5,4 @@ val charactersModules = listOf(
     characterLocalModule,
     characterRepositoryModule,
     characterServiceModule,
-    )
+)

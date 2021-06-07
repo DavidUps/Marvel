@@ -10,5 +10,4 @@ interface CharactersDAO : BaseDao<CharactersEntity> {
 
     @Query("SELECT * FROM CharactersEntity")
     fun getCharacters(): CharactersEntity?
-
 }

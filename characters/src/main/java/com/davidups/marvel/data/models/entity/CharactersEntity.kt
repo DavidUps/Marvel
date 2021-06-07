@@ -31,6 +31,8 @@ data class CharactersEntity(
     }
 
     fun toCharacters() =
-        Characters(offset,
-            limit, total, count, results?.map { it.toCharacter() }?.toMutableList())
+        Characters(
+            offset,
+            limit, total, count, results?.map { it.toCharacter() }?.toMutableList()
+        )
 }

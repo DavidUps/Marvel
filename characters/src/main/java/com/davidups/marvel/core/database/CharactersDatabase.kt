@@ -12,5 +12,4 @@ import com.davidups.marvel.data.models.entity.CharactersEntity
 abstract class CharactersDatabase : RoomDatabase() {
 
     abstract fun characterDao(): CharactersDAO
-
 }

@@ -17,7 +17,6 @@ import javax.net.ssl.SSLSocketFactory
 import javax.net.ssl.TrustManager
 import javax.net.ssl.X509TrustManager
 
-
 val networkModule = module {
     factory { NetworkHandler(get()) }
     single {
@@ -88,11 +87,9 @@ fun setUnsafeClient(okHttpClientBuilder: OkHttpClient.Builder) {
     sslContext.init(null, trustAllCerts, SecureRandom())
     val sslSocketFactory: SSLSocketFactory = sslContext.socketFactory
 
-
     okHttpClientBuilder.sslSocketFactory(sslSocketFactory, trustAllCerts[0] as X509TrustManager)
     okHttpClientBuilder.hostnameVerifier({ _, _ -> true })
 }
-
 
 fun String.md5(): String {
     val md = MessageDigest.getInstance("MD5")

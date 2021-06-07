@@ -6,9 +6,9 @@ import com.davidups.marvel.data.models.view.CharactersView
 import com.davidups.marvel.data.service.CharacterService
 import com.davidups.marvel.exception.Failure
 import com.davidups.marvel.extensions.orEmpty
+import com.davidups.marvel.functional.Error
 import com.davidups.marvel.functional.State
 import com.davidups.marvel.functional.Success
-import com.davidups.marvel.functional.Error
 import com.davidups.marvel.platform.NetworkHandler
 import com.google.gson.Gson
 import kotlinx.coroutines.Dispatchers
@@ -22,7 +22,7 @@ class CharactersDataSourceImp(
     private val local: CharacterLocal
 ) : CharactersDataSource {
 
-    override fun getCharacters(offset: Int?, fromPagination:Boolean) = flow {
+    override fun getCharacters(offset: Int?, fromPagination: Boolean) = flow {
         val local = local.getCharacters()
         if (local != null && !fromPagination)
             emit(Success(local.toCharacters().toCharactersView()))

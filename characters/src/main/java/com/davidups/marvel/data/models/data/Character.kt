@@ -3,7 +3,6 @@ package com.davidups.marvel.data.models.data
 import com.davidups.marvel.data.models.entity.CharacterEntity
 import com.davidups.marvel.data.models.view.CharacterView
 import com.davidups.marvel.extensions.orEmpty
-import java.util.Date
 
 data class Character(
     val id: Int?,
@@ -23,5 +22,4 @@ data class Character(
         resourceURI.orEmpty(),
         characterImage?.image().orEmpty()
     )
-
 }

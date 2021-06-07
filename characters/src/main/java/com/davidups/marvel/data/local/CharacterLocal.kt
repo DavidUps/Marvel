@@ -1,7 +1,6 @@
 package com.davidups.marvel.data.local
 
 import com.davidups.marvel.core.database.CharactersDatabase
-import com.davidups.marvel.data.models.data.Characters
 import com.davidups.marvel.data.models.entity.CharactersEntity
 
 class CharacterLocal(database: CharactersDatabase) : CharacterDB {
@@ -15,5 +14,4 @@ class CharacterLocal(database: CharactersDatabase) : CharacterDB {
     override fun updateCharacters(characters: CharactersEntity) = characterDao.update(characters)
 
     override fun getCharacters() = characterDao.getCharacters()
-
 }
