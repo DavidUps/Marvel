@@ -3,15 +3,15 @@ package com.davidups.marvel.features.character.views.fragments
 import android.os.Bundle
 import android.view.View
 import androidx.recyclerview.widget.GridLayoutManager
-import com.davidups.marvel.marvel.R
 import com.davidups.marvel.core.platform.BaseFragment
 import com.davidups.marvel.core.platform.viewBinding.viewBinding
 import com.davidups.marvel.data.models.view.CharactersView
 import com.davidups.marvel.extensions.endless
-import com.davidups.marvel.extensions.observe
 import com.davidups.marvel.extensions.failure
+import com.davidups.marvel.extensions.observe
 import com.davidups.marvel.features.character.views.adapters.CharactersAdapter
 import com.davidups.marvel.features.character.views.viewmodel.CharacterViewModel
+import com.davidups.marvel.marvel.R
 import com.davidups.marvel.marvel.databinding.CharactersFragmentBinding
 import org.koin.android.viewmodel.ext.android.viewModel
 

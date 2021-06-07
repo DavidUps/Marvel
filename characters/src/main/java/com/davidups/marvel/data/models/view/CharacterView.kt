@@ -5,7 +5,6 @@ import com.davidups.marvel.data.models.data.Character
 import com.davidups.marvel.data.models.data.CharacterThumbnail
 import com.davidups.marvel.extensions.empty
 import kotlinx.android.parcel.Parcelize
-import java.util.Date
 
 @Parcelize
 data class CharacterView(

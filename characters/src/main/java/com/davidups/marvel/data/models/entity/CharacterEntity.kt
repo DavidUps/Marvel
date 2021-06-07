@@ -1,10 +1,8 @@
 package com.davidups.marvel.data.models.entity
 
 import androidx.room.Entity
-import androidx.room.PrimaryKey
 import com.davidups.marvel.data.models.data.Character
 import com.davidups.marvel.extensions.empty
-import java.util.Date
 
 @Entity
 data class CharacterEntity(

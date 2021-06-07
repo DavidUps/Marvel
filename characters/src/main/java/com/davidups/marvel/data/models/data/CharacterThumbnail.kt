@@ -6,7 +6,7 @@ data class CharacterThumbnail(val path: String?, val extension: String?, val ima
     constructor(path: String, extension: String) : this(path, extension, null)
     constructor(image: String) : this(null, null, image)
 
-    fun image() = "${path}.${extension}"
+    fun image() = "$path.$extension"
 
     fun toCharacterThumbnailEntity() = CharacterThumbnailEntity(path, extension, image)
 
@@ -16,5 +16,4 @@ data class CharacterThumbnail(val path: String?, val extension: String?, val ima
             return CharacterThumbnail(imageSplit[0], imageSplit[1])
         }
     }
-
 }

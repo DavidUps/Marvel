@@ -12,5 +12,4 @@ class GetCharacters(private val repository: CharactersRepository) :
     override fun run(params: Params?) = repository.getCharacters(params?.offset, params?.fromPagination.orEmpty())
 
     data class Params(val offset: Int?, val fromPagination: Boolean)
-
 }
