@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/itemContainer"
     android:layout_width="200dp"
     android:layout_height="250dp">
 
@@ -8,7 +9,10 @@
         android:id="@+id/cvItem"
         android:layout_width="150dp"
         android:layout_height="200dp"
-        app:cardElevation="@dimen/size_8"
+        android:clickable="true"
+        android:focusable="true"
+        app:cardElevation="0dp"
+        app:cardPreventCornerOverlap="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -21,9 +25,9 @@
 
             <ImageView
                 android:id="@+id/ivCharacter"
+                style="@style/autoAdjustImageView"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                style="@style/autoAdjustImageView"
                 app:layout_constraintBottom_toTopOf="@id/gl6v"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -31,9 +35,9 @@
                 android:id="@+id/tvCharacterName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:ellipsize="end"
                 android:layout_marginLeft="8dp"
                 android:layout_marginRight="8dp"
+                android:ellipsize="end"
                 android:maxLines="1"
                 app:layout_constraintBottom_toTopOf="@id/btnMoreInfo"
                 app:layout_constraintTop_toBottomOf="@id/gl6v" />
@@ -45,8 +49,8 @@
                 android:layout_height="wrap_content"
                 android:text="@string/more_info"
                 android:textAllCaps="false"
-                app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent" />
 
             <androidx.constraintlayout.widget.Guideline
