@@ -1,4 +1,4 @@
-package com.davidups.starwars
+package com.davidups.marvel.characters
 
 import org.junit.rules.TestRule
 import org.mockito.MockitoAnnotations
