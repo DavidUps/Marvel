@@ -1,12 +1,9 @@
-package com.davidups.marvel.characters.usescases
+package com.davidups.marvel.characters.repository
 
-import com.davidups.marvel.characters.UnitTest
 import com.davidups.marvel.data.models.entity.CharactersEntity
 import com.davidups.marvel.data.models.view.CharactersView
 import com.davidups.marvel.domain.datasource.CharactersDataSourceImp
-import com.davidups.marvel.domain.repository.CharactersRepository
 import com.davidups.marvel.domain.repository.CharactersRepositoryImp
-import com.davidups.marvel.domain.usecases.GetCharacters
 import com.davidups.marvel.functional.Success
 import com.nhaarman.mockitokotlin2.doReturn
 import com.nhaarman.mockitokotlin2.mock
@@ -17,23 +14,23 @@ import org.amshove.kluent.`should be instance of`
 import org.amshove.kluent.shouldBeEqualTo
 import org.junit.Test
 
-class GetMoviesTest : UnitTest() {
-
-    private lateinit var repository: CharactersRepository
-    private lateinit var getMovies: GetCharacters
+class CharactersRepositoryTest {
 
     @Test
     fun `should get movies on success`() = runBlocking {
 
-        val movies = CharactersEntity.empty()
+        val characters = CharactersEntity.empty()
 
         val moviesDataSource = mock<CharactersDataSourceImp> {
-            onBlocking { getCharacters(null, false) } doReturn flow { emit(Success(movies.toCharacters().toCharactersView())) }
+            onBlocking {
+                getCharacters(
+                    null,
+                    false
+                )
+            } doReturn flow { emit(Success(characters.toCharacters().toCharactersView())) }
         }
 
-        repository = CharactersRepositoryImp(moviesDataSource)
-
-        getMovies = GetCharacters(repository)
+        val repository = CharactersRepositoryImp(moviesDataSource)
 
         val flow = repository.getCharacters(null, false)
 
@@ -41,7 +38,7 @@ class GetMoviesTest : UnitTest() {
             result.`should be instance of`<Success<CharactersView>>()
             when (result) {
                 is Success<CharactersView> -> {
-                    result.data shouldBeEqualTo movies
+                    result.data shouldBeEqualTo characters
                 }
             }
         }
