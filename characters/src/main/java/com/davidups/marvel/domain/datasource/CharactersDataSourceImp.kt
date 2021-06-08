@@ -36,8 +36,7 @@ class CharactersDataSourceImp(
         return if (networkHandler.isConnected.orEmpty()) {
             service.getCharacters(10, offset).run {
                 if (isSuccessful && body() != null) {
-                    val data =
-                        Gson().fromJson(Gson().toJson(body()!!.data), CharactersEntity::class.java)
+                    val data = body()!!.data
                     saveLocal(data)
                     Success(data.toCharacters().toCharactersView())
                 } else {
