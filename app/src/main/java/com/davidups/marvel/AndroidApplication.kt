@@ -1,14 +1,14 @@
 package com.davidups.marvel
 
 import android.app.Application
-import com.davidups.marvel.core.di.characterDataSourceModule
-import com.davidups.marvel.core.di.characterLocalModule
-import com.davidups.marvel.core.di.characterRepositoryModule
-import com.davidups.marvel.core.di.characterServiceModule
-import com.davidups.marvel.core.di.characterUseCasesModule
+import com.davidups.core.core.di.characterDataSourceModule
+import com.davidups.core.core.di.characterLocalModule
+import com.davidups.core.core.di.characterRepositoryModule
+import com.davidups.core.core.di.characterServiceModule
+import com.davidups.core.core.di.characterUseCasesModule
 import com.davidups.marvel.core.di.viewModelModule
-import com.davidups.marvel.di.networkModule
-import com.davidups.marvel.di.sharedModule
+import com.davidups.core.di.networkModule
+import com.davidups.core.di.sharedModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin

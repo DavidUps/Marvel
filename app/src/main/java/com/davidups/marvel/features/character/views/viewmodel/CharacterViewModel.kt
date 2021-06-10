@@ -2,14 +2,14 @@ package com.davidups.marvel.features.character.views.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
-import com.davidups.marvel.data.models.view.CharactersView
-import com.davidups.marvel.domain.usecases.GetCharacters
-import com.davidups.marvel.exception.Failure
-import com.davidups.marvel.extensions.cancelIfActive
-import com.davidups.marvel.extensions.orEmpty
-import com.davidups.marvel.functional.Error
-import com.davidups.marvel.functional.Success
-import com.davidups.marvel.platform.BaseViewModel
+import com.davidups.characters.data.models.view.CharactersView
+import com.davidups.characters.domain.usecases.GetCharacters
+import com.davidups.core.exception.Failure
+import com.davidups.core.extensions.cancelIfActive
+import com.davidups.core.extensions.orEmpty
+import com.davidups.core.functional.Error
+import com.davidups.core.functional.Success
+import com.davidups.core.platform.BaseViewModel
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.collect
