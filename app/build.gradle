@@ -11,7 +11,7 @@ android {
     buildToolsVersion "30.0.3"
 
     defaultConfig {
-        applicationId "com.davidups.marvel.marvel"
+        applicationId "com.davidups.marvel"
         minSdkVersion 21
         targetSdkVersion 30
         versionCode 1
