@@ -23,7 +23,7 @@ jobs:
           java-version: 11
 
       - name: Create empty apiKeys.properties
-        run: touch apiKeys.properties
+        run: touch apiKeys.properties; echo 'PUBLIC_KEY' > apiKeys.properties; echo 'PRIVATE_KEY' >> apiKeys.properties
 
       - name: Build project
         run: ./gradlew spotlessCheck assembleDebug lint --stacktrace
