@@ -29,7 +29,7 @@ class CharactersDataSourceTest {
             onBlocking { getCharacters() } doReturn Response.success(apiResponse)
         }
 
-        charactersApi.getCharacters().body() shouldBeEqualTo characters
+        charactersApi.getCharacters().body() shouldBeEqualTo apiResponse
 
         val service = mock<CharacterService> {
             onBlocking { getCharacters() } doReturn Response.success(apiResponse)

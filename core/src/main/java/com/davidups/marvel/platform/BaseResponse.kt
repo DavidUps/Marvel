@@ -9,5 +9,3 @@ data class BaseResponse<T : Any>(
     val data: T,
     val etag: String
 )
-
-

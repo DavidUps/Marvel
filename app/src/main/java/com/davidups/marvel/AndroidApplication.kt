@@ -37,6 +37,7 @@ class AndroidApplication : Application() {
             characterRepositoryModule,
             characterServiceModule
         )
+
         val coreModules = mutableListOf(
             networkModule,
             sharedModule,
