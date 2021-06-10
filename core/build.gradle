@@ -51,8 +51,8 @@ android {
             buildConfigField "String", "ENVIRONMENT", "\"PRO\""
             buildConfigField "String", "DATA_BASE", "\"PRO-MARVEL\""
             buildConfigField "String", "BASE_URL", "\"https://gateway.marvel.com/\""
-            buildConfigField "String", "PUBLIC_KEY", apikeyProperties["PUBLIC_KEY"]:"\"\""
-            buildConfigField "String", "PRIVATE_KEY", apikeyProperties["PRIVATE_KEY"]:"\"\""
+            buildConfigField "String", "PUBLIC_KEY", apikeyProperties["PUBLIC_KEY"]?:"\"\""
+            buildConfigField "String", "PRIVATE_KEY", apikeyProperties["PRIVATE_KEY"]?:"\"\""
         }
     }
 }
