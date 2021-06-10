@@ -38,7 +38,7 @@ class CharactersRepositoryTest {
             result.`should be instance of`<Success<CharactersView>>()
             when (result) {
                 is Success<CharactersView> -> {
-                    result.data shouldBeEqualTo characters
+                    result.data shouldBeEqualTo characters.toCharacters().toCharactersView()
                 }
             }
         }

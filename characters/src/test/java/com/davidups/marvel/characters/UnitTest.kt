@@ -1,6 +1,5 @@
 package com.davidups.marvel.characters
 
-import com.davidups.marvel.characters.InjectMocksRule
 import org.junit.Rule
 import org.junit.runner.RunWith
 import org.mockito.junit.MockitoJUnitRunner

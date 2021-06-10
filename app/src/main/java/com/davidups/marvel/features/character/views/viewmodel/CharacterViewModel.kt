@@ -32,7 +32,9 @@ class CharacterViewModel(
             getCharacters(GetCharacters.Params(calculateOffset(), fromPagination))
                 .onStart { handleShowSpinner(true) }
                 .onCompletion { handleShowSpinner(false) }
-                .catch { handleFailure(Failure.Throwable(it)) }
+                .catch {
+                    handleFailure(Failure.Throwable(it))
+                }
                 .collect { result ->
                     when (result) {
                         is Success<CharactersView> -> _characters.value = result.data

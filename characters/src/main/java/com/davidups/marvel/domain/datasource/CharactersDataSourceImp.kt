@@ -10,7 +10,6 @@ import com.davidups.marvel.functional.Error
 import com.davidups.marvel.functional.State
 import com.davidups.marvel.functional.Success
 import com.davidups.marvel.platform.NetworkHandler
-import com.google.gson.Gson
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.flow
