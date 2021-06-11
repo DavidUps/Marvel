@@ -1,4 +1,4 @@
-package com.davidups.core.core.di
+package com.davidups.characters.core.di
 
 import com.davidups.characters.domain.repository.CharactersRepository
 import com.davidups.characters.domain.repository.CharactersRepositoryImp

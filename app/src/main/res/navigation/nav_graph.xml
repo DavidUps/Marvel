@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/charactersFragment"
-        android:name="com.davidups.marvel.features.character.views.fragments.CharactersFragment"
+        android:name="com.davidups.core.features.character.views.fragments.CharactersFragment"
         android:label="characters_fragment"
         tools:layout="@layout/characters_fragment">
         <action
@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/characterFragment"
-        android:name="com.davidups.marvel.features.character.views.fragments.CharacterFragment"
+        android:name="com.davidups.core.features.character.views.fragments.CharacterFragment"
         android:label="character_fragment"
         tools:layout="@layout/character_fragment">
         <argument

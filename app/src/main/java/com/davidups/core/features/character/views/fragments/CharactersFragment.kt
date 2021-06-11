@@ -1,4 +1,4 @@
-package com.davidups.marvel.features.character.views.fragments
+package com.davidups.core.features.character.views.fragments
 
 import android.os.Bundle
 import android.view.View
@@ -6,16 +6,16 @@ import androidx.core.view.doOnPreDraw
 import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
-import com.davidups.marvel.core.platform.BaseFragment
-import com.davidups.marvel.core.platform.viewBinding.viewBinding
-import com.davidups.marvel.data.models.view.CharactersView
-import com.davidups.marvel.extensions.endless
-import com.davidups.marvel.extensions.failure
-import com.davidups.marvel.extensions.observe
-import com.davidups.marvel.features.character.views.adapters.CharactersAdapter
-import com.davidups.marvel.features.character.views.viewmodel.CharacterViewModel
-import com.davidups.marvel.R
-import com.davidups.marvel.databinding.CharactersFragmentBinding
+import com.davidups.characters.data.models.view.CharactersView
+import com.davidups.core.extensions.endless
+import com.davidups.core.extensions.failure
+import com.davidups.core.extensions.observe
+import com.davidups.core.R
+import com.davidups.core.core.platform.BaseFragment
+import com.davidups.core.core.platform.viewBinding.viewBinding
+import com.davidups.core.databinding.CharactersFragmentBinding
+import com.davidups.core.features.character.views.adapters.CharactersAdapter
+import com.davidups.core.features.character.views.viewmodel.CharacterViewModel
 import com.google.android.material.transition.MaterialElevationScale
 import com.google.android.material.transition.MaterialFadeThrough
 import org.koin.android.viewmodel.ext.android.viewModel

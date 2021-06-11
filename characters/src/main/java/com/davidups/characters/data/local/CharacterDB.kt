@@ -1,4 +1,4 @@
-package com.davidups.core.data.local
+package com.davidups.characters.data.local
 
 import com.davidups.characters.data.models.entity.CharactersEntity
 

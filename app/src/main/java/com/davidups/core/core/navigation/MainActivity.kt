@@ -1,4 +1,4 @@
-package com.davidups.marvel.core.navigation
+package com.davidups.core.core.navigation
 
 import android.animation.LayoutTransition
 import android.os.Bundle
@@ -6,8 +6,8 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
-import com.davidups.marvel.R
-import com.davidups.marvel.databinding.NavigationActivityBinding
+import com.davidups.core.R
+import com.davidups.core.databinding.NavigationActivityBinding
 import kotlinx.android.synthetic.main.navigation_activity.toolbar
 
 class MainActivity : AppCompatActivity() {

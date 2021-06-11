@@ -1,4 +1,4 @@
-package com.davidups.marvel.core.platform.viewBinding.internal
+package com.davidups.core.core.platform.viewBinding.internal
 
 import android.app.Activity
 import android.view.View

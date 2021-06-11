@@ -3,8 +3,8 @@ package com.davidups.characters.data.models.entity
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import androidx.room.TypeConverters
-import com.davidups.core.core.database.typeconverters.CharacterConverter
 import com.davidups.characters.data.models.data.Characters
+import com.davidups.characters.core.database.typeconverters.CharacterConverter
 import com.davidups.core.extensions.empty
 
 @Entity

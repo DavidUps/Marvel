@@ -1,6 +1,6 @@
-package com.davidups.marvel.core.di
+package com.davidups.core.core.di
 
-import com.davidups.marvel.features.character.views.viewmodel.CharacterViewModel
+import com.davidups.core.features.character.views.viewmodel.CharacterViewModel
 import org.koin.android.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 

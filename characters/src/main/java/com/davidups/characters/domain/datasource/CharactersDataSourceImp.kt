@@ -1,9 +1,9 @@
 package com.davidups.characters.domain.datasource
 
-import com.davidups.core.data.local.CharacterLocal
 import com.davidups.characters.data.models.entity.CharactersEntity
 import com.davidups.characters.data.models.view.CharactersView
 import com.davidups.characters.data.service.CharacterService
+import com.davidups.characters.data.local.CharacterLocal
 import com.davidups.core.exception.Failure
 import com.davidups.core.extensions.orEmpty
 import com.davidups.core.functional.Error

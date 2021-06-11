@@ -1,13 +1,13 @@
-package com.davidups.marvel.features.character.views.fragments
+package com.davidups.core.features.character.views.fragments
 
 import android.os.Bundle
 import android.view.View
 import androidx.navigation.fragment.navArgs
-import com.davidups.marvel.core.platform.BaseFragment
-import com.davidups.marvel.core.platform.viewBinding.viewBinding
-import com.davidups.marvel.extensions.loadFromUrl
-import com.davidups.marvel.R
-import com.davidups.marvel.databinding.CharacterFragmentBinding
+import com.davidups.core.extensions.loadFromUrl
+import com.davidups.core.R
+import com.davidups.core.core.platform.BaseFragment
+import com.davidups.core.core.platform.viewBinding.viewBinding
+import com.davidups.core.databinding.CharacterFragmentBinding
 import com.google.android.material.transition.MaterialContainerTransform
 import kotlinx.android.synthetic.main.navigation_activity.toolbar
 import kotlin.LazyThreadSafetyMode.NONE

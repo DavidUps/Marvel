@@ -1,4 +1,4 @@
-package com.davidups.core.core.dao
+package com.davidups.characters.core.dao
 
 import androidx.room.Dao
 import androidx.room.Query

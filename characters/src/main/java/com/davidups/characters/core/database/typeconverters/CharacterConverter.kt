@@ -1,4 +1,4 @@
-package com.davidups.core.core.database.typeconverters
+package com.davidups.characters.core.database.typeconverters
 
 import androidx.room.TypeConverter
 import com.davidups.characters.data.models.entity.CharacterEntity

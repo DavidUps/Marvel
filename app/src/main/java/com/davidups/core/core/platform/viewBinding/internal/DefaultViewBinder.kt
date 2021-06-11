@@ -1,9 +1,9 @@
-package com.davidups.marvel.core.platform.viewBinding.internal
+package com.davidups.core.core.platform.viewBinding.internal
 
 import android.view.View
 import androidx.annotation.RestrictTo
 import androidx.viewbinding.ViewBinding
-import com.davidups.marvel.core.platform.viewBinding.ViewBinder
+import com.davidups.core.core.platform.viewBinding.ViewBinder
 
 @RestrictTo(RestrictTo.Scope.LIBRARY)
 @PublishedApi
