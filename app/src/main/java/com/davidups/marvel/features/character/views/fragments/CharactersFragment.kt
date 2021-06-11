@@ -8,12 +8,12 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.davidups.characters.data.models.view.CharactersView
 import com.davidups.core.extensions.endless
-import com.davidups.marvel.databinding.CharactersFragmentBinding
 import com.davidups.core.extensions.failure
 import com.davidups.core.extensions.observe
 import com.davidups.marvel.R
 import com.davidups.marvel.core.platform.BaseFragment
 import com.davidups.marvel.core.platform.viewBinding.viewBinding
+import com.davidups.marvel.databinding.CharactersFragmentBinding
 import com.davidups.marvel.features.character.views.adapters.CharactersAdapter
 import com.davidups.marvel.features.character.views.viewmodel.CharacterViewModel
 import com.google.android.material.transition.MaterialElevationScale

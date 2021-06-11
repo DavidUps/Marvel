@@ -1,7 +1,7 @@
 package com.davidups.characters.data.local
 
-import com.davidups.characters.data.models.entity.CharactersEntity
 import com.davidups.characters.core.database.CharactersDatabase
+import com.davidups.characters.data.models.entity.CharactersEntity
 
 class CharacterLocal(database: CharactersDatabase) : CharacterDB {
 

@@ -1,11 +1,11 @@
 package com.davidups.characters.datasource
 
+import com.davidups.characters.data.local.CharacterLocal
 import com.davidups.characters.data.models.entity.CharactersEntity
 import com.davidups.characters.data.models.view.CharactersView
 import com.davidups.characters.data.service.CharacterApi
 import com.davidups.characters.data.service.CharacterService
 import com.davidups.characters.domain.datasource.CharactersDataSourceImp
-import com.davidups.characters.data.local.CharacterLocal
 import com.davidups.core.functional.Success
 import com.davidups.core.platform.BaseResponse
 import com.nhaarman.mockitokotlin2.doReturn

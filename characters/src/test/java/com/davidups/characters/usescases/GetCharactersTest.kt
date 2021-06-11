@@ -1,12 +1,12 @@
 package com.davidups.characters.usescases
 
+import com.davidups.characters.UnitTest
 import com.davidups.characters.data.models.entity.CharactersEntity
 import com.davidups.characters.data.models.view.CharactersView
 import com.davidups.characters.domain.datasource.CharactersDataSourceImp
 import com.davidups.characters.domain.repository.CharactersRepository
 import com.davidups.characters.domain.repository.CharactersRepositoryImp
 import com.davidups.characters.domain.usecases.GetCharacters
-import com.davidups.characters.UnitTest
 import com.davidups.core.functional.Success
 import com.nhaarman.mockitokotlin2.doReturn
 import com.nhaarman.mockitokotlin2.mock
