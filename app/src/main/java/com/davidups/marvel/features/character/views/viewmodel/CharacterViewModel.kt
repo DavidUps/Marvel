@@ -1,4 +1,4 @@
-package com.davidups.core.features.character.views.viewmodel
+package com.davidups.marvel.features.character.views.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope

@@ -1,4 +1,4 @@
-package com.davidups.core
+package com.davidups.marvel
 
 import android.app.Application
 import com.davidups.characters.core.di.characterDataSourceModule
@@ -8,7 +8,7 @@ import com.davidups.characters.core.di.characterServiceModule
 import com.davidups.characters.core.di.characterUseCasesModule
 import com.davidups.core.di.networkModule
 import com.davidups.core.di.sharedModule
-import com.davidups.core.core.di.viewModelModule
+import com.davidups.marvel.core.di.viewModelModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.davidups.core">
+    package="com.davidups.marvel">
 
     <application
-        android:name="com.davidups.core.AndroidApplication"
+        android:name="com.davidups.marvel.AndroidApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher_foreground"
         android:label="@string/app_name"
@@ -13,7 +13,7 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name="com.davidups.core.core.navigation.MainActivity">
+        <activity android:name="com.davidups.marvel.core.navigation.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

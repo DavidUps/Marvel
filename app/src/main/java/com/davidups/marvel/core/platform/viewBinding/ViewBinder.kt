@@ -1,4 +1,4 @@
-package com.davidups.core.core.platform.viewBinding
+package com.davidups.marvel.core.platform.viewBinding
 
 import android.view.View
 import androidx.annotation.RestrictTo

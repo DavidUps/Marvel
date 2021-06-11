@@ -1,4 +1,4 @@
-package com.davidups.core.core.platform
+package com.davidups.marvel.core.platform
 
 import androidx.appcompat.app.AppCompatActivity
 

@@ -1,4 +1,4 @@
-package com.davidups.core.features.character.views.adapters
+package com.davidups.marvel.features.character.views.adapters
 
 import android.view.View
 import android.view.ViewGroup
@@ -6,8 +6,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.davidups.characters.data.models.view.CharacterView
 import com.davidups.core.extensions.inflate
 import com.davidups.core.extensions.loadFromUrl
-import com.davidups.core.R
-import com.davidups.core.databinding.CharacterItemBinding
+import com.davidups.marvel.R
+import com.davidups.marvel.databinding.CharacterItemBinding
 import kotlin.properties.Delegates
 
 class CharactersAdapter : RecyclerView.Adapter<CharactersAdapter.EnvironmentHolder>() {
