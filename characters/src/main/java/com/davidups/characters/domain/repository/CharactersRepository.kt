@@ -6,5 +6,5 @@ import kotlinx.coroutines.flow.Flow
 
 interface CharactersRepository {
 
-    fun getCharacters(offset: Int?, fromPagination: Boolean): Flow<State<CharactersView>>
+    fun getCharacters(fromPagination: Boolean): Flow<State<CharactersView>>
 }

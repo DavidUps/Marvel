@@ -14,4 +14,6 @@ class CharacterLocal(database: CharactersDatabase) : CharacterDB {
     override fun updateCharacters(characters: CharactersEntity) = characterDao.update(characters)
 
     override fun getCharacters() = characterDao.getCharacters()
+
+    override fun getOffset() = characterDao.getOffset()
 }

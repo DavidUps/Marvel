@@ -6,4 +6,5 @@ interface CharacterDB {
     fun getCharacters(): CharactersEntity?
     fun putCharacters(characters: CharactersEntity)
     fun updateCharacters(characters: CharactersEntity)
+    fun getOffset(): Int?
 }

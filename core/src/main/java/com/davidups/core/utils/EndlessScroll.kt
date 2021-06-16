@@ -31,7 +31,6 @@ class EndlessScroll(
 
     private fun loading() {
         with(recyclerView) {
-            val visibleItemCount = childCount
             val totalItemCount = layoutManager?.itemCount ?: 0
             val firstVisibleItem = when (layoutManager) {
                 is StaggeredGridLayoutManager -> {

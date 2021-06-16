@@ -4,7 +4,7 @@ import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.Observer
 import com.davidups.characters.data.models.entity.CharactersEntity
 import com.davidups.characters.data.models.view.CharactersView
-import com.davidups.characters.domain.repository.CharactersRepositoryImp
+import com.davidups.characters.data.repository.CharactersRepositoryImp
 import com.davidups.characters.domain.usecases.GetCharacters
 import com.davidups.core.exception.Failure
 import com.davidups.core.functional.Success
@@ -13,6 +13,7 @@ import com.nhaarman.mockitokotlin2.doReturn
 import com.nhaarman.mockitokotlin2.mock
 import com.nhaarman.mockitokotlin2.verify
 import com.nhaarman.mockitokotlin2.whenever
+import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.consumeAsFlow
 import kotlinx.coroutines.launch
@@ -23,6 +24,7 @@ import org.junit.Test
 
 class CharacterViewModelTest {
 
+    @ExperimentalCoroutinesApi
     @get:Rule
     var coroutinesRule = CoroutineTestRule()
 
@@ -45,6 +47,7 @@ class CharacterViewModelTest {
         }
     }
 
+    @ExperimentalCoroutinesApi
     @Test
     fun `should emit get characters`() =
         coroutinesRule.dispatcher.runBlockingTest {
@@ -58,7 +61,7 @@ class CharacterViewModelTest {
 
             doReturn(flow)
                 .whenever(repository)
-                .getCharacters(0, true)
+                .getCharacters(true)
 
             launch {
                 channel.send(expectedCharacters)

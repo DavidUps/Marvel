@@ -4,7 +4,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flowOn
 
-abstract class UseCase<out Type, in Params> where Type : Any? {
+abstract class BaseUseCase<out Type, in Params> where Type : Any? {
     abstract fun run(params: Params? = null): Flow<Type>
 
     @JvmOverloads

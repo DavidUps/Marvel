@@ -29,12 +29,10 @@ class CharacterViewModel(
     fun getCharacters(fromPagination: Boolean = false) {
         getCharactersJob.cancelIfActive()
         getCharactersJob = viewModelScope.launch {
-            getCharacters(GetCharacters.Params(calculateOffset(), fromPagination))
+            getCharacters(GetCharacters.Params(fromPagination))
                 .onStart { handleShowSpinner(true) }
                 .onCompletion { handleShowSpinner(false) }
-                .catch {
-                    handleFailure(Failure.Throwable(it))
-                }
+                .catch { handleFailure(Failure.Throwable(it)) }
                 .collect { result ->
                     when (result) {
                         is Success<CharactersView> -> _characters.value = result.data
@@ -43,6 +41,4 @@ class CharacterViewModel(
                 }
         }
     }
-
-    private fun calculateOffset() = _characters.value?.offset?.let { it + 10 }.orEmpty()
 }

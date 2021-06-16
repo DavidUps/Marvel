@@ -3,9 +3,9 @@ package com.davidups.characters.usescases
 import com.davidups.characters.UnitTest
 import com.davidups.characters.data.models.entity.CharactersEntity
 import com.davidups.characters.data.models.view.CharactersView
-import com.davidups.characters.domain.datasource.CharactersDataSourceImp
+import com.davidups.characters.data.datasource.CharactersDataSourceImp
 import com.davidups.characters.domain.repository.CharactersRepository
-import com.davidups.characters.domain.repository.CharactersRepositoryImp
+import com.davidups.characters.data.repository.CharactersRepositoryImp
 import com.davidups.characters.domain.usecases.GetCharacters
 import com.davidups.core.functional.Success
 import com.nhaarman.mockitokotlin2.doReturn
@@ -28,14 +28,20 @@ class GetCharactersTest : UnitTest() {
         val characters = CharactersEntity.empty()
 
         val moviesDataSource = mock<CharactersDataSourceImp> {
-            onBlocking { getCharacters(null, false) } doReturn flow { emit(Success(characters.toCharacters().toCharactersView())) }
+            onBlocking { getCharacters(false) } doReturn flow {
+                emit(
+                    Success(
+                        characters.toCharacters().toCharactersView()
+                    )
+                )
+            }
         }
 
         repository = CharactersRepositoryImp(moviesDataSource)
 
         getCharacters = GetCharacters(repository)
 
-        val flow = repository.getCharacters(null, false)
+        val flow = repository.getCharacters(false)
 
         flow.collect { result ->
             result.`should be instance of`<Success<CharactersView>>()

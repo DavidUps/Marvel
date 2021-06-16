@@ -1,6 +1,7 @@
-package com.davidups.characters.domain.repository
+package com.davidups.characters.data.repository
 
 import com.davidups.characters.data.datasource.CharactersDataSource
+import com.davidups.characters.domain.repository.CharactersRepository
 
 class CharactersRepositoryImp(
     private val charactersDataSource: CharactersDataSource
