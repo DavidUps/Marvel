@@ -1,4 +1,4 @@
-package com.davidups.core
+package com.davidups.marvel
 
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi

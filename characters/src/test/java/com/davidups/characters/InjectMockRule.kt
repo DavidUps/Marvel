@@ -1,4 +1,4 @@
-package com.davidups.core.characters
+package com.davidups.characters
 
 import org.junit.rules.TestRule
 import org.mockito.MockitoAnnotations

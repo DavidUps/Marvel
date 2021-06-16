@@ -4,8 +4,8 @@ import android.os.Bundle
 import android.view.View
 import androidx.navigation.fragment.navArgs
 import com.davidups.core.extensions.loadFromUrl
-import com.davidups.marvel.core.platform.BaseFragment
 import com.davidups.marvel.R
+import com.davidups.marvel.core.platform.BaseFragment
 import com.davidups.marvel.core.platform.viewBinding.viewBinding
 import com.davidups.marvel.databinding.CharacterFragmentBinding
 import com.google.android.material.transition.MaterialContainerTransform

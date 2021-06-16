@@ -1,9 +1,12 @@
-package com.davidups.core.characters.repository
+package com.davidups.characters.usescases
 
+import com.davidups.characters.UnitTest
 import com.davidups.characters.data.models.entity.CharactersEntity
 import com.davidups.characters.data.models.view.CharactersView
 import com.davidups.characters.data.datasource.CharactersDataSourceImp
+import com.davidups.characters.domain.repository.CharactersRepository
 import com.davidups.characters.data.repository.CharactersRepositoryImp
+import com.davidups.characters.domain.usecases.GetCharacters
 import com.davidups.core.functional.Success
 import com.nhaarman.mockitokotlin2.doReturn
 import com.nhaarman.mockitokotlin2.mock
@@ -14,7 +17,10 @@ import org.amshove.kluent.`should be instance of`
 import org.amshove.kluent.shouldBeEqualTo
 import org.junit.Test
 
-class CharactersRepositoryTest {
+class GetCharactersTest : UnitTest() {
+
+    private lateinit var repository: CharactersRepository
+    private lateinit var getCharacters: GetCharacters
 
     @Test
     fun `should get movies on success`() = runBlocking {
@@ -22,14 +28,18 @@ class CharactersRepositoryTest {
         val characters = CharactersEntity.empty()
 
         val moviesDataSource = mock<CharactersDataSourceImp> {
-            onBlocking {
-                getCharacters(
-                    false
+            onBlocking { getCharacters(false) } doReturn flow {
+                emit(
+                    Success(
+                        characters.toCharacters().toCharactersView()
+                    )
                 )
-            } doReturn flow { emit(Success(characters.toCharacters().toCharactersView())) }
+            }
         }
 
-        val repository = CharactersRepositoryImp(moviesDataSource)
+        repository = CharactersRepositoryImp(moviesDataSource)
+
+        getCharacters = GetCharacters(repository)
 
         val flow = repository.getCharacters(false)
 

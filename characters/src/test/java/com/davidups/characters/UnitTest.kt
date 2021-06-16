@@ -1,4 +1,4 @@
-package com.davidups.core.characters
+package com.davidups.characters
 
 import org.junit.Rule
 import org.junit.runner.RunWith

@@ -1,8 +1,8 @@
-package com.davidups.core.core.di
+package com.davidups.characters.core.di
 
 import androidx.room.Room
-import com.davidups.core.core.database.CharactersDatabase
-import com.davidups.core.data.local.CharacterLocal
+import com.davidups.characters.core.database.CharactersDatabase
+import com.davidups.characters.data.local.CharacterLocal
 import org.koin.dsl.module
 
 val characterLocalModule = module {

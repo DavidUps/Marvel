@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/marvel_wp"
-    tools:context=".features.character.views.fragments.CharactersFragment">
+    tools:context="com.davidups.marvel.features.character.views.fragments.CharactersFragment">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvCharacters"

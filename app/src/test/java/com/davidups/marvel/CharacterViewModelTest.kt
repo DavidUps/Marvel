@@ -1,4 +1,4 @@
-package com.davidups.core
+package com.davidups.marvel
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.Observer
@@ -7,8 +7,8 @@ import com.davidups.characters.data.models.view.CharactersView
 import com.davidups.characters.data.repository.CharactersRepositoryImp
 import com.davidups.characters.domain.usecases.GetCharacters
 import com.davidups.core.exception.Failure
-import com.davidups.marvel.features.character.views.viewmodel.CharacterViewModel
 import com.davidups.core.functional.Success
+import com.davidups.marvel.features.character.views.viewmodel.CharacterViewModel
 import com.nhaarman.mockitokotlin2.doReturn
 import com.nhaarman.mockitokotlin2.mock
 import com.nhaarman.mockitokotlin2.verify

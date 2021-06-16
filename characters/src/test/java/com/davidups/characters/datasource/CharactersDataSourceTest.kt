@@ -1,6 +1,6 @@
-package com.davidups.core.characters.datasource
+package com.davidups.characters.datasource
 
-import com.davidups.core.data.local.CharacterLocal
+import com.davidups.characters.data.local.CharacterLocal
 import com.davidups.characters.data.models.entity.CharactersEntity
 import com.davidups.characters.data.models.view.CharactersView
 import com.davidups.characters.data.service.CharacterApi
