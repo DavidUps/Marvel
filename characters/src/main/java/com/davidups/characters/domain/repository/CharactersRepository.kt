@@ -6,9 +6,5 @@ import kotlinx.coroutines.flow.Flow
 
 interface CharactersRepository {
 
-<<<<<<< Updated upstream
-    fun getCharacters(offset: Int?, romPagination: Boolean): Flow<State<CharactersView>>
-=======
     fun getCharacters(fromPagination: Boolean): Flow<State<CharactersView>>
->>>>>>> Stashed changes
 }
