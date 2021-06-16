@@ -5,7 +5,7 @@ import com.davidups.characters.data.models.entity.CharactersEntity
 import com.davidups.characters.data.models.view.CharactersView
 import com.davidups.characters.data.service.CharacterApi
 import com.davidups.characters.data.service.CharacterService
-import com.davidups.characters.domain.datasource.CharactersDataSourceImp
+import com.davidups.characters.data.datasource.CharactersDataSourceImp
 import com.davidups.core.functional.Success
 import com.davidups.core.platform.BaseResponse
 import com.nhaarman.mockitokotlin2.doReturn
@@ -41,7 +41,7 @@ class CharactersDataSourceTest {
 
         val dataSource = CharactersDataSourceImp(mock(), service, local)
 
-        val flow = dataSource.getCharacters(null, false)
+        val flow = dataSource.getCharacters(false)
 
         flow.collect { result ->
             result.`should be instance of`<Success<CharactersView>>()

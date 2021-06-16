@@ -1,4 +1,4 @@
-package com.davidups.characters.domain.datasource
+package com.davidups.characters.data.datasource
 
 import com.davidups.core.data.local.CharacterLocal
 import com.davidups.characters.data.models.entity.CharactersEntity
@@ -21,19 +21,19 @@ class CharactersDataSourceImp(
     private val local: CharacterLocal
 ) : CharactersDataSource {
 
-    override fun getCharacters(offset: Int?, fromPagination: Boolean) = flow {
+    override fun getCharacters(fromPagination: Boolean) = flow {
         val local = local.getCharacters()
         if (local != null && !fromPagination)
             emit(Success(local.toCharacters().toCharactersView()))
         else
-            emit(getCharactersFromService(offset))
+            emit(getCharactersFromService())
     }
         .catch { emit(Error(Failure.Throwable(it))) }
         .flowOn(Dispatchers.IO)
 
-    private suspend fun getCharactersFromService(offset: Int?): State<CharactersView> {
+    private suspend fun getCharactersFromService(): State<CharactersView> {
         return if (networkHandler.isConnected.orEmpty()) {
-            service.getCharacters(10, offset).run {
+            service.getCharacters(10, calculateOffset()).run {
                 if (isSuccessful && body() != null) {
                     val data = body()!!.data
                     saveLocal(data)
@@ -45,6 +45,8 @@ class CharactersDataSourceImp(
         } else
             Error(Failure.NetworkConnection)
     }
+
+    private fun calculateOffset() = local.getOffset()?.let { it + 10 }.orEmpty()
 
     private fun saveLocal(characters: CharactersEntity) {
         val localCache = local.getCharacters()

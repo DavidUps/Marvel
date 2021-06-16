@@ -2,8 +2,8 @@ package com.davidups.core.characters.repository
 
 import com.davidups.characters.data.models.entity.CharactersEntity
 import com.davidups.characters.data.models.view.CharactersView
-import com.davidups.characters.domain.datasource.CharactersDataSourceImp
-import com.davidups.characters.domain.repository.CharactersRepositoryImp
+import com.davidups.characters.data.datasource.CharactersDataSourceImp
+import com.davidups.characters.data.repository.CharactersRepositoryImp
 import com.davidups.core.functional.Success
 import com.nhaarman.mockitokotlin2.doReturn
 import com.nhaarman.mockitokotlin2.mock
@@ -24,7 +24,6 @@ class CharactersRepositoryTest {
         val moviesDataSource = mock<CharactersDataSourceImp> {
             onBlocking {
                 getCharacters(
-                    null,
                     false
                 )
             } doReturn flow { emit(Success(characters.toCharacters().toCharactersView())) }
@@ -32,7 +31,7 @@ class CharactersRepositoryTest {
 
         val repository = CharactersRepositoryImp(moviesDataSource)
 
-        val flow = repository.getCharacters(null, false)
+        val flow = repository.getCharacters(false)
 
         flow.collect { result ->
             result.`should be instance of`<Success<CharactersView>>()
