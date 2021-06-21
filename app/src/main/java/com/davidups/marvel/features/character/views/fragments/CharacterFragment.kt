@@ -1,7 +1,9 @@
 package com.davidups.marvel.features.character.views.fragments
 
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
 import androidx.navigation.fragment.navArgs
 import com.davidups.core.extensions.loadFromUrl
 import com.davidups.marvel.R

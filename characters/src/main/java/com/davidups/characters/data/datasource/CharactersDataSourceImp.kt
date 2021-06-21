@@ -29,7 +29,6 @@ class CharactersDataSourceImp(
             emit(getCharactersFromService())
     }
         .catch { emit(Error(Failure.Throwable(it))) }
-        .flowOn(Dispatchers.IO)
 
     private suspend fun getCharactersFromService(): State<CharactersView> {
         return if (networkHandler.isConnected.orEmpty()) {
