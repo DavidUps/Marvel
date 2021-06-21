@@ -8,7 +8,7 @@ import com.davidups.characters.data.repository.CharactersRepositoryImp
 import com.davidups.characters.domain.usecases.GetCharacters
 import com.davidups.core.exception.Failure
 import com.davidups.core.functional.Success
-import com.davidups.marvel.features.character.views.viewmodel.CharacterViewModel
+import com.davidups.marvel.features.character.views.viewmodel.CharactersViewModel
 import com.nhaarman.mockitokotlin2.doReturn
 import com.nhaarman.mockitokotlin2.mock
 import com.nhaarman.mockitokotlin2.verify
@@ -22,7 +22,7 @@ import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 
-class CharacterViewModelTest {
+class CharactersViewModelTest {
 
     @ExperimentalCoroutinesApi
     @get:Rule
@@ -30,7 +30,7 @@ class CharacterViewModelTest {
 
     @get:Rule
     var instantExecutorRule = InstantTaskExecutorRule()
-    private lateinit var viewModel: CharacterViewModel
+    private lateinit var viewModel: CharactersViewModel
 
     private var repository = mock<CharactersRepositoryImp>()
     private var getCharacters = mock<GetCharacters>()
@@ -41,7 +41,7 @@ class CharacterViewModelTest {
     @Before
     fun setup() {
         getCharacters = GetCharacters(repository)
-        viewModel = CharacterViewModel(getCharacters).apply {
+        viewModel = CharactersViewModel(getCharacters).apply {
             characters.observeForever(charactersObserver)
             failure.observeForever(isErrorObserver)
         }

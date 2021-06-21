@@ -15,7 +15,7 @@ import com.davidups.marvel.core.platform.BaseFragment
 import com.davidups.marvel.core.platform.viewBinding.viewBinding
 import com.davidups.marvel.databinding.CharactersFragmentBinding
 import com.davidups.marvel.features.character.views.adapters.CharactersAdapter
-import com.davidups.marvel.features.character.views.viewmodel.CharacterViewModel
+import com.davidups.marvel.features.character.views.viewmodel.CharactersViewModel
 import com.google.android.material.transition.MaterialElevationScale
 import com.google.android.material.transition.MaterialFadeThrough
 import org.koin.android.viewmodel.ext.android.viewModel
@@ -23,7 +23,7 @@ import org.koin.android.viewmodel.ext.android.viewModel
 class CharactersFragment : BaseFragment(R.layout.characters_fragment) {
 
     private val binding by viewBinding(CharactersFragmentBinding::bind)
-    private val characterViewModel by viewModel<CharacterViewModel>()
+    private val characterViewModel by viewModel<CharactersViewModel>()
 
     private val charactersAdapter by lazy { CharactersAdapter() }
     private var rvEndListener = true

@@ -6,16 +6,17 @@ import com.davidups.core.exception.Failure
 
 abstract class BaseViewModel : ViewModel() {
 
-    var _failure: MutableLiveData<Failure> = MutableLiveData()
+    private val _failure: MutableLiveData<Failure> = MutableLiveData()
     val failure get() = _failure
 
-    var showSpinner: MutableLiveData<Boolean> = MutableLiveData()
+    private val _showSpinner: MutableLiveData<Boolean> = MutableLiveData()
+    val showSpinner get() = _showSpinner
 
     protected fun handleFailure(failure: Failure?) {
-        this.failure.value = failure
+        _failure.value = failure
     }
 
     protected fun handleShowSpinner(show: Boolean) {
-        this.showSpinner.value = show
+        _showSpinner.value = show
     }
 }

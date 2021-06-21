@@ -17,7 +17,7 @@ import kotlinx.coroutines.flow.onCompletion
 import kotlinx.coroutines.flow.onStart
 import kotlinx.coroutines.launch
 
-class CharacterViewModel(
+class CharactersViewModel(
     private val getCharacters: GetCharacters
 ) : BaseViewModel() {
 
